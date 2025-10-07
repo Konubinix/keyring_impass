@@ -1,0 +1,21 @@
+[build-system]
+requires = ["flit_core >=3.11,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.module]
+name = "keyring_impass"
+path = "."
+
+[project]
+name = "keyring_impass"
+authors = [{name = "Konubinix", email = "konubinixweb@gmail.com"}]
+license = "MIT"
+license-files = ["LICENSE"]
+dynamic = ["version", "description"]
+dependencies = ["keyring"]
+
+[project.urls]
+Home = "https://github.com/clk-project/keyring_impass"
+
+[project.entry-points."keyring.backends"]
+bws = "keyring_impass:ImpassKeyring"
